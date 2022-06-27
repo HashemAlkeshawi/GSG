@@ -431,14 +431,18 @@ class FacebookUi extends StatelessWidget {
                         "3 mins ago",
                         style: TextStyle(height: 1.5),
                       ),
-                      trailing: IconButton(
-                        padding: EdgeInsets.all(0),
-                        icon: Icon(Icons.more_horiz),
-                        onPressed: () {
+                      trailing: InkWell(
+                        child: Icon(Icons.more_horiz),
+                        onTap: () {
                           print("more about post");
                         },
                       ),
                     ),
+                    Container(
+                      child: Image.asset("assets/images/coder.jpg"),
+                    ),
+                    Row(),
+                    Row(),
                   ],
                 ),
               ),
