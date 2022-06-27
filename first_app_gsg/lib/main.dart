@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
-      // home: FaceBook2_ui(),
       home: FacebookUi(),
+      // home: FaceBook2_ui(),
     ),
   );
 }
