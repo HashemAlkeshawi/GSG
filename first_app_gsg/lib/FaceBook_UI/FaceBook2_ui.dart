@@ -131,7 +131,7 @@ class FaceBook2_ui extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                            "Flutter is a great tool that can help us build great apps that works for both platforms iOS and Android, thank you Google!"),
+                            "Flutter is a great tool that can help us build great apps that work for both platforms: iOS and Android,\n\nThank Google!"),
                         Container(
                           height: 200,
                           width: double.infinity,

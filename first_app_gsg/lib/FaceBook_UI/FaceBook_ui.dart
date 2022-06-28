@@ -1,4 +1,8 @@
+import 'package:first_app_gsg/FaceBook_UI/data/data.dart';
+import 'package:first_app_gsg/FaceBook_UI/post.dart';
+import 'package:first_app_gsg/FaceBook_UI/storyCreation.dart';
 import 'package:flutter/material.dart';
+import 'package:first_app_gsg/FaceBook_UI/postRequist.dart';
 
 class FacebookUi extends StatelessWidget {
   @override
@@ -97,586 +101,67 @@ class FacebookUi extends StatelessWidget {
               ))
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.all(12),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
+      body: ListView(
+        children: [
+          Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    "Stories",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Spacer(),
-                  InkWell(
-                    onTap: () {
-                      print("see Archive");
-                    },
-                    child: Row(
-                      children: [
-                        Text("See Archive ",
-                            style: TextStyle(fontWeight: FontWeight.w300)),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.grey[600],
-                          size: 20,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 15),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Stack(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Open Story!");
-                              },
-                              child: Container(
-                                alignment: Alignment.bottomCenter,
-                                padding: EdgeInsets.only(bottom: 10),
-                                height: 175,
-                                width: 130,
-                                decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(15)),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/JustMe.jpeg"))),
-                                child: Text(
-                                  "hashem alkeshawi",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    shadows: [
-                                      Shadow(
-                                          color: Colors.black, blurRadius: 5),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional.topStart,
-                              child: Container(
-                                margin: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2.5,
-                                  ),
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    print("Open Profile!");
-                                  },
-                                  child: CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: Colors.white,
-                                    backgroundImage: AssetImage(
-                                      "assets/images/me.png",
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Open Story!");
-                              },
-                              child: Container(
-                                alignment: Alignment.bottomCenter,
-                                padding: EdgeInsets.only(bottom: 10),
-                                height: 175,
-                                width: 140,
-                                decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(15)),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/JustMe.jpeg"))),
-                                child: Text(
-                                  "hashem alkeshawi",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    shadows: [
-                                      Shadow(
-                                          color: Colors.black, blurRadius: 5),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional.topStart,
-                              child: Container(
-                                margin: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2.5,
-                                  ),
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    print("Open Profile!");
-                                  },
-                                  child: CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: Colors.white,
-                                    backgroundImage: AssetImage(
-                                      "assets/images/me.png",
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Open Story!");
-                              },
-                              child: Container(
-                                alignment: Alignment.bottomCenter,
-                                padding: EdgeInsets.only(bottom: 10),
-                                height: 175,
-                                width: 140,
-                                decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(15)),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/JustMe.jpeg"))),
-                                child: Text(
-                                  "hashem alkeshawi",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    shadows: [
-                                      Shadow(
-                                          color: Colors.black, blurRadius: 5),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional.topStart,
-                              child: Container(
-                                margin: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2.5,
-                                  ),
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    print("Open Profile!");
-                                  },
-                                  child: CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: Colors.white,
-                                    backgroundImage: AssetImage(
-                                      "assets/images/me.png",
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Open Story!");
-                              },
-                              child: Container(
-                                alignment: Alignment.bottomCenter,
-                                padding: EdgeInsets.only(bottom: 10),
-                                height: 175,
-                                width: 140,
-                                decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(15)),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/JustMe.jpeg"))),
-                                child: Text(
-                                  "hashem alkeshawi",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    shadows: [
-                                      Shadow(
-                                          color: Colors.black, blurRadius: 5),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional.topStart,
-                              child: Container(
-                                margin: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2.5,
-                                  ),
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    print("Open Profile!");
-                                  },
-                                  child: CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: Colors.white,
-                                    backgroundImage: AssetImage(
-                                      "assets/images/me.png",
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Open Story!");
-                              },
-                              child: Container(
-                                alignment: Alignment.bottomCenter,
-                                padding: EdgeInsets.only(bottom: 10),
-                                height: 175,
-                                width: 140,
-                                decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(15)),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/JustMe.jpeg"))),
-                                child: Text(
-                                  "hashem alkeshawi",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    shadows: [
-                                      Shadow(
-                                          color: Colors.black, blurRadius: 5),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional.topStart,
-                              child: Container(
-                                margin: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2.5,
-                                  ),
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    print("Open Profile!");
-                                  },
-                                  child: CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: Colors.white,
-                                    backgroundImage: AssetImage(
-                                      "assets/images/me.png",
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+              Text(
+                "Stories",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 12),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          contentPadding: EdgeInsets.all(0),
-                          horizontalTitleGap: 4,
-                          leading: CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/me.png"),
-                          ),
-                          title: SizedBox(
-                            child: Row(
-                              children: [
-                                Text(
-                                  "Hashem Alkeshawi",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  " updated his cover photo",
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ],
-                            ),
-                          ),
-                          subtitle: Text(
-                            "3 mins ago",
-                            style: TextStyle(height: 1.5),
-                          ),
-                          trailing: InkWell(
-                            child: Icon(Icons.more_horiz),
-                            onTap: () {
-                              print("more about post");
-                            },
-                          ),
-                        ),
-                        Container(
-                          height: 200,
-                          width: double.infinity,
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage("assets/images/coder.jpg"),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.recommend,
-                              color: Colors.blue,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                print("Reactions");
-                              },
-                              child: Text(
-                                "  109",
-                                style: TextStyle(fontSize: 10),
-                              ),
-                            ),
-                            Spacer(),
-                            InkWell(
-                              onTap: () {
-                                print("Commints");
-                              },
-                              child: Text(
-                                "73 commints",
-                                style: TextStyle(fontSize: 10),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Liked the post");
-                              },
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.thumb_up_alt_outlined,
-                                  ),
-                                  Text(
-                                    "  Like",
-                                    style: TextStyle(fontSize: 13),
-                                  )
-                                ],
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                print("Liked the post");
-                              },
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.chat_bubble_outline,
-                                  ),
-                                  Text(
-                                    "  Commint",
-                                    style: TextStyle(fontSize: 13),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+              Spacer(),
+              InkWell(
+                onTap: () {
+                  print("see Archive");
+                },
+                child: Row(
+                  children: [
+                    Text("See Archive ",
+                        style: TextStyle(fontWeight: FontWeight.w300)),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.grey[600],
+                      size: 20,
                     ),
-                  ),
-                  Divider(
-                    height: 20,
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 12),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          contentPadding: EdgeInsets.all(0),
-                          horizontalTitleGap: 4,
-                          leading: CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/me.png"),
-                          ),
-                          title: SizedBox(
-                            child: Row(
-                              children: [
-                                Text(
-                                  "Hashem Alkeshawi",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  " updated his cover photo",
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ],
-                            ),
-                          ),
-                          subtitle: Text(
-                            "3 mins ago",
-                            style: TextStyle(height: 1.5),
-                          ),
-                          trailing: InkWell(
-                            child: Icon(Icons.more_horiz),
-                            onTap: () {
-                              print("more about post");
-                            },
-                          ),
-                        ),
-                        Container(
-                          height: 200,
-                          width: double.infinity,
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage("assets/images/coder.jpg"),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.recommend,
-                              color: Colors.blue,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                print("Reactions");
-                              },
-                              child: Text(
-                                "  109",
-                                style: TextStyle(fontSize: 10),
-                              ),
-                            ),
-                            Spacer(),
-                            InkWell(
-                              onTap: () {
-                                print("Commints");
-                              },
-                              child: Text(
-                                "73 commints",
-                                style: TextStyle(fontSize: 10),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Liked the post");
-                              },
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.thumb_up_alt_outlined,
-                                  ),
-                                  Text(
-                                    "  Like",
-                                    style: TextStyle(fontSize: 13),
-                                  )
-                                ],
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                print("Liked the post");
-                              },
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.chat_bubble_outline,
-                                  ),
-                                  Text(
-                                    "  Commint",
-                                    style: TextStyle(fontSize: 13),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              )
             ],
           ),
-        ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 15),
+            child: SizedBox(
+              height: 190,
+              width: double.infinity,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                children:
+                    storyRequistsList.map((e) => storyCreation(e)).toList(),
+              ),
+            ),
+          ),
+          Expanded(
+            // height: ,
+            child: ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: postRequistsList.length,
+                itemBuilder: (contixt, index) {
+                  return postCreation(postRequistsList[index]);
+                }),
+          )
+          // Column(children: postRequistsList.map((e) => postCreation(e)).toList()
+          //  [
+          //   postCreation(postRequistsList),
+          //   postCreation(postRequistsList),
+          //   postCreation(postRequistsList),
+          // ],
+          // ),
+        ],
       ),
     );
   }
