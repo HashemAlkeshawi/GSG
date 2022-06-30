@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:first_app_gsg/FaceBook_UI/postRequist.dart';
 
 class FacebookUi extends StatelessWidget {
+  // Orientation ori = M
   @override
   Widget build(BuildContext context) {
     return Scaffold(
