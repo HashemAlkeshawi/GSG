@@ -9,7 +9,7 @@ class FacebookUi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        child: Column(
+        child: ListView(
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
@@ -19,11 +19,28 @@ class FacebookUi extends StatelessWidget {
               accountName: Text("name"),
               accountEmail: Text("Email@email.me"),
             ),
-            ListTile(
-              title: Text("Settings"),
-              leading: Icon(Icons.settings),
-              subtitle: Text("Open settings"),
-              trailing: Icon(Icons.arrow_back_ios),
+            ListView(
+              shrinkWrap: true,
+              children: [
+                ListTile(
+                  title: Text("Settings"),
+                  leading: Icon(Icons.settings),
+                  subtitle: Text("Open settings"),
+                  trailing: Icon(Icons.arrow_right),
+                ),
+                ListTile(
+                  title: Text("About"),
+                  leading: Icon(Icons.details),
+                  subtitle: Text("Open About us"),
+                  trailing: Icon(Icons.arrow_right),
+                ),
+                ListTile(
+                  title: Text("Profile"),
+                  leading: Icon(Icons.person),
+                  subtitle: Text("Open Your Profile"),
+                  trailing: Icon(Icons.arrow_right),
+                ),
+              ],
             ),
           ],
         ),
