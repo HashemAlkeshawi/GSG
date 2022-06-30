@@ -102,6 +102,7 @@ class FacebookUi extends StatelessWidget {
         ],
       ),
       body: ListView(
+        padding: EdgeInsets.all(8),
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -132,35 +133,23 @@ class FacebookUi extends StatelessWidget {
             ],
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            child: SizedBox(
-              height: 190,
-              width: double.infinity,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                children:
-                    storyRequistsList.map((e) => storyCreation(e)).toList(),
-              ),
+            height: 175,
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: storyRequistsList.length,
+              itemBuilder: (context, count) {
+                return storyCreation(storyRequistsList[count]);
+              },
             ),
           ),
-          Expanded(
-            // height: ,
-            child: ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: postRequistsList.length,
-                itemBuilder: (contixt, index) {
-                  return postCreation(postRequistsList[index]);
-                }),
-          )
-          // Column(children: postRequistsList.map((e) => postCreation(e)).toList()
-          //  [
-          //   postCreation(postRequistsList),
-          //   postCreation(postRequistsList),
-          //   postCreation(postRequistsList),
-          // ],
-          // ),
+          ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: postRequistsList.length,
+              itemBuilder: (contixt, index) {
+                return postCreation(postRequistsList[index]);
+              }),
         ],
       ),
     );
