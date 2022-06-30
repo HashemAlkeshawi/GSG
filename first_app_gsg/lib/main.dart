@@ -8,6 +8,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: FacebookUi(),
+      title: "title",
       // home: FaceBook2_ui(),
       // home: InstagramUi(),
     ),

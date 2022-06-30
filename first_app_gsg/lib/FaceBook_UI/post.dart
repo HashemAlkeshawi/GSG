@@ -23,14 +23,14 @@ class postCreation extends StatelessWidget {
             horizontalTitleGap: 4,
             leading: CircleAvatar(
               //from list
-              backgroundImage: NetworkImage(post!.u!.image!),
+              backgroundImage: NetworkImage(post!.u!.image ?? ""),
             ),
             title: SizedBox(
               child: Row(
                 children: [
                   Text(
                     //from list
-                    post!.u!.name!,
+                    post!.u!.name ?? "",
                     style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                   ),
                   Text(
@@ -52,7 +52,7 @@ class postCreation extends StatelessWidget {
               },
             ),
           ),
-          Text(post!.p!.content!),
+          Text(post!.p!.content ?? ''),
           Container(
             height: 200,
             width: double.infinity,
@@ -75,7 +75,7 @@ class postCreation extends StatelessWidget {
                   print("Reactions");
                 },
                 child: Text(
-                  "  ${post!.p!.noLikes!}",
+                  "  ${post!.p!.noLikes ?? ''}",
                   style: TextStyle(fontSize: 10),
                 ),
               ),

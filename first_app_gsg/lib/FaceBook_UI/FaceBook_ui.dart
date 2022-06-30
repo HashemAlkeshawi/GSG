@@ -8,8 +8,27 @@ class FacebookUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage:
+                    NetworkImage(postsResponse[0]['user']['image']),
+              ),
+              accountName: Text("name"),
+              accountEmail: Text("Email@email.me"),
+            ),
+            ListTile(
+              title: Text("Settings"),
+              leading: Icon(Icons.settings),
+              subtitle: Text("Open settings"),
+              trailing: Icon(Icons.arrow_back_ios),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: Container(
-        // padding: EdgeInsets.only(left: 12, right: 12, bottom: 12),
         margin: EdgeInsets.only(bottom: 12),
         height: 40,
         child: Row(
@@ -133,7 +152,7 @@ class FacebookUi extends StatelessWidget {
             ],
           ),
           Container(
-            height: 175,
+            height: MediaQuery.of(context).size.height / 3.2,
             child: ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
