@@ -189,43 +189,43 @@ class FaceBook2_ui extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                print("Liked the post");
-                              },
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.thumb_up_alt_outlined,
-                                  ),
-                                  Text(
-                                    "  Like",
-                                    style: TextStyle(fontSize: 13),
-                                  )
-                                ],
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                print("Liked the post");
-                              },
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.chat_bubble_outline,
-                                  ),
-                                  Text(
-                                    "  Commint",
-                                    style: TextStyle(fontSize: 13),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        //   children: [
+                        //     InkWell(
+                        //       onTap: () {
+                        //         print("Liked the post");
+                        //       },
+                        //       child: Row(
+                        //         children: [
+                        //           Icon(
+                        //             Icons.thumb_up_alt_outlined,
+                        //           ),
+                        //           Text(
+                        //             "  Like",
+                        //             style: TextStyle(fontSize: 13),
+                        //           )
+                        //         ],
+                        //       ),
+                        //     ),
+                        //     InkWell(
+                        //       onTap: () {
+                        //         print("Liked the post");
+                        //       },
+                        //       child: Row(
+                        //         children: [
+                        //           Icon(
+                        //             Icons.chat_bubble_outline,
+                        //           ),
+                        //           Text(
+                        //             "  Commint",
+                        //             style: TextStyle(fontSize: 13),
+                        //           )
+                        //         ],
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
                       ],
                     ),
                   ),

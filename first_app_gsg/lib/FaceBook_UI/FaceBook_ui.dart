@@ -92,16 +92,16 @@ class FacebookUi extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 80,
         elevation: 0.0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-            onPressed: () {
-              print("Add Photo!");
-            },
-            icon: Icon(
-              Icons.photo_camera,
-              color: Colors.grey[800],
-              size: 35,
-            )),
+        backgroundColor: Colors.grey,
+        // leading: IconButton(
+        // onPressed: () {
+        //   print("Add Photo!");
+        // },
+        // icon: Icon(
+        //   Icons.photo_camera,
+        //   color: Colors.grey[800],
+        //   size: 35,
+        // )),
         title: Container(
           // padding: EdgeInsets.all(10),
           width: 220,
