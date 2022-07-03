@@ -1,6 +1,7 @@
 import 'package:first_app_gsg/FaceBook_UI/FaceBook2_ui.dart';
 import 'package:first_app_gsg/FaceBook_UI/FaceBook_ui.dart';
 import 'package:first_app_gsg/instagramUI.dart';
+import 'package:first_app_gsg/statfulTest/tapBar/home.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app_gsg/statfulTest/statfulTest.dart';
 
@@ -34,7 +35,10 @@ class TheApp extends State<app> {
 }
 
 void main() {
-  runApp(app());
+  runApp(MaterialApp(
+    home: home(),
+  ));
+  // runApp(app());
 
   //   MaterialApp(
   //     darkTheme: ThemeData(brightness: Brightness.dark),
