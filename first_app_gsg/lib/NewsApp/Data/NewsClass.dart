@@ -6,7 +6,7 @@ class news_model {
   String? url;
   String? urlToImage;
   String? content;
-  bool isLiked = true;
+  bool isLiked = false;
 
   news_model.fromJson(Map<String, dynamic> map) {
     source = Source.fromJson(map['source']);

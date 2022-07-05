@@ -6,10 +6,18 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class newsWedgit extends StatelessWidget {
-  int random = Random().nextInt(100);
+class newsWedgit extends StatefulWidget {
+  Function? changeState;
   news_model newsItem;
   newsWedgit(this.newsItem);
+
+  @override
+  State<newsWedgit> createState() => _newsWedgitState();
+}
+
+class _newsWedgitState extends State<newsWedgit> {
+  int random = Random().nextInt(100);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +29,7 @@ class newsWedgit extends StatelessWidget {
             width: 100,
             child: CachedNetworkImage(
               fit: BoxFit.cover,
-              imageUrl: newsItem.urlToImage ?? "",
+              imageUrl: widget.newsItem.urlToImage ?? "",
               errorWidget: (context, String, dynamic) {
                 return Image.network("https://picsum.photos/100/100?$random");
                 // return Text("No Image Found");
@@ -32,12 +40,12 @@ class newsWedgit extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  newsItem.title ?? "not found",
+                  widget.newsItem.title ?? "not found",
                   style: TextStyle(fontSize: 12),
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  newsItem.description ?? "not found",
+                  widget.newsItem.description ?? "not found",
                   style: TextStyle(fontSize: 12),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -46,17 +54,22 @@ class newsWedgit extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        newsItem.author ?? "not found",
+                        widget.newsItem.author ?? "not found",
                         style: TextStyle(fontSize: 8),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        widget.newsItem.isLiked = !widget.newsItem.isLiked;
+
+                        setState(() {});
+                      },
                       icon: Icon(
                         Icons.favorite,
-                        color:
-                            newsItem.isLiked ? Colors.redAccent : Colors.grey,
+                        color: widget.newsItem.isLiked
+                            ? Colors.redAccent
+                            : Colors.grey,
                       ),
                     ),
                   ],
