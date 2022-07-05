@@ -1,6 +1,7 @@
-import 'package:first_app_gsg/statfulTest/tapBar/screen1.dart';
-import 'package:first_app_gsg/statfulTest/tapBar/screen2.dart';
-import 'package:first_app_gsg/statfulTest/tapBar/screen3.dart';
+import 'package:first_app_gsg/NewsApp/screens/screen1.dart';
+import 'package:first_app_gsg/NewsApp/screens/screen2.dart';
+import 'package:first_app_gsg/NewsApp/screens/screen3.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
