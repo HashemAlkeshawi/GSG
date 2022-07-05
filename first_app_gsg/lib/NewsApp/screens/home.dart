@@ -39,7 +39,7 @@ class _homeState extends State<home> {
           ),
         ),
         body: TabBarView(
-          children: [screen1(), screen2(), screen3()],
+          children: [screen1(setLike), screen2(setLike), screen3(setLike)],
         ),
       ),
     );

@@ -7,9 +7,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class newsWedgit extends StatefulWidget {
-  Function? changeState;
+  Function setLike;
+
   news_model newsItem;
-  newsWedgit(this.newsItem);
+  newsWedgit(this.newsItem, this.setLike);
 
   @override
   State<newsWedgit> createState() => _newsWedgitState();
@@ -61,9 +62,7 @@ class _newsWedgitState extends State<newsWedgit> {
                     ),
                     IconButton(
                       onPressed: () {
-                        widget.newsItem.isLiked = !widget.newsItem.isLiked;
-
-                        setState(() {});
+                        widget.setLike(widget.newsItem);
                       },
                       icon: Icon(
                         Icons.favorite,
