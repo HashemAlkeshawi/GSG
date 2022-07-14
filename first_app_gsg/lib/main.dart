@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app_gsg/statfulTest/statfulTest.dart';
 
@@ -32,20 +33,30 @@ import 'NewsApp/screens/home.dart';
 //   }
 // }
 
-void main() {
-  runApp(MaterialApp(
-    home: home(),
-  ));
-  // runApp(app());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
 
-  //   MaterialApp(
-  //     darkTheme: ThemeData(brightness: Brightness.dark),
-  //     // themeMode: ,
-  //     debugShowCheckedModeBanner: false,
-  //     home: Test(),
-  //     // home: FacebookUi(),
-  //     // home: FaceBook2_ui(),
-  //     // home: InstagramUi(),
-  //   ),
-  // );
+  runApp(
+    EasyLocalization(
+      supportedLocales: [Locale('en', 'US'), Locale('de', 'DE')],
+      path:
+          'assets/translations', // <-- change the path of the translation files
+      fallbackLocale: Locale('en', 'US'),
+      child: materialapp(),
+    ),
+  );
+}
+
+class materialapp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      debugShowCheckedModeBanner: false,
+      home: home(),
+    );
+  }
 }

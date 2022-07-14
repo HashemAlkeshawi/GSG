@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:first_app_gsg/NewsApp/Data/NewsClass.dart';
 import 'package:first_app_gsg/NewsApp/screens/screen1.dart';
 import 'package:first_app_gsg/NewsApp/screens/screen2.dart';
@@ -22,26 +23,29 @@ class _homeState extends State<home> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("Hot News!"),
-          bottom: TabBar(
-            tabs: [
-              Tab(
-                text: "Home",
-              ),
-              Tab(
-                text: "Faborite",
-              ),
-              Tab(
-                text: "Profile",
-              ),
-            ],
+          appBar: AppBar(
+            title: Text('App Name').tr(),
+            //  bottom: TabBar(
+            //       tabs: [
+            //         Tab(
+            //           text: "Home",
+            //         ),
+            //         Tab(
+            //           text: "Faborite",
+            //         ),
+            //         Tab(
+            //           text: "Contact Us",
+            //         ),
+            //       ],
+            //     ),
           ),
-        ),
-        body: TabBarView(
-          children: [screen1(setLike), screen2(setLike), screen3(setLike)],
-        ),
-      ),
+          body: Container(
+            child: Text('Content'.tr()),
+          )
+          // TabBarView(
+          // children: [screen1(setLike), screen2(setLike), screen3(setLike)],
+          // ),
+          ),
     );
   }
 }
