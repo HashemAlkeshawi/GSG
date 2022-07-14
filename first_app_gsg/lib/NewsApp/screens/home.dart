@@ -38,6 +38,20 @@ class _homeState extends State<home> {
             //         ),
             //       ],
             //     ),
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    if (context.locale.toString() == 'en') {
+                      context.setLocale(Locale('ar'));
+                    } else {
+                      context.setLocale(Locale('en'));
+                    }
+                    setState(
+                      () {},
+                    );
+                  },
+                  icon: Icon(Icons.language))
+            ],
           ),
           body: Container(
             child: Text('Content'.tr()),
