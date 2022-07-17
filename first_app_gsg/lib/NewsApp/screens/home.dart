@@ -6,6 +6,7 @@ import 'package:first_app_gsg/NewsApp/screens/screen3.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class home extends StatefulWidget {
   @override
@@ -54,7 +55,16 @@ class _homeState extends State<home> {
             ],
           ),
           body: Container(
-            child: Text('Content'.tr()),
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Content'.tr(),
+                  style: TextStyle(fontSize: 18.sp),
+                ),
+              ],
+            ),
           )
           // TabBarView(
           // children: [screen1(setLike), screen2(setLike), screen3(setLike)],
