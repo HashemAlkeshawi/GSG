@@ -7,7 +7,9 @@ class First_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        return Future.value(false);
+        return Navigator.canPop(context)
+            ? Future.value(false)
+            : Future.value(false);
       },
       child: Scaffold(
         appBar: AppBar(),
