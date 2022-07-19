@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:first_app_gsg/statfulTest/statfulTest.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'FaceBook_UI/FaceBook_ui.dart';
 import 'NewsApp/screens/home.dart';
 
 // class app extends StatefulWidget {
@@ -63,11 +64,11 @@ class materialapp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           debugShowCheckedModeBanner: false,
-          home: First_Screen(),
-          routes: {
-            First_Screen.FirstScreenName: (context) => First_Screen(),
-            Second_Screen.SecondScreenName: (context) => Second_Screen(),
-          },
+          home: FacebookUi(),
+          // routes: {
+          //   First_Screen.FirstScreenName: (context) => First_Screen(),
+          //   Second_Screen.SecondScreenName: (context) => Second_Screen(),
+          // },
         );
       },
     );

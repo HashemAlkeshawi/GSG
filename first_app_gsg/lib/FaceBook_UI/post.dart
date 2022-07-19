@@ -54,15 +54,22 @@ class postCreation extends StatelessWidget {
           ),
           Text(post!.p!.content ?? ''),
           Container(
+            child: post!.p!.image == null
+                ? Image.file(post!.p!.imageFile!)
+                : Image.network(post!.p!.image!),
             height: 200,
             width: double.infinity,
             margin: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
-                    // from list
-                    image: NetworkImage(post!.p!.image!),
-                    fit: BoxFit.cover)),
+              borderRadius: BorderRadius.circular(20),
+              // image: DecorationImage(
+
+              //     // from list
+              //     image:,
+              //     // image: AssetImage(post!.p!.image!),
+              //     // image: FileImage(post!.p!.imageFile!),
+              //     fit: BoxFit.cover)
+            ),
           ),
           Row(
             children: [

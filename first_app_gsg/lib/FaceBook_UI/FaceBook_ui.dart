@@ -4,6 +4,8 @@ import 'package:first_app_gsg/FaceBook_UI/storyCreation.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app_gsg/FaceBook_UI/postRequist.dart';
 
+import 'AddPost.dart';
+
 class FacebookUi extends StatelessWidget {
   // Orientation ori = M
   @override
@@ -80,7 +82,8 @@ class FacebookUi extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Add Post!");
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => addPost()));
         },
         backgroundColor: Color(0xcc3c5a99),
         child: Icon(
@@ -172,6 +175,7 @@ class FacebookUi extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height / 3.2,
             child: ListView.builder(
+              // reverse: true,
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: storyRequistsList.length,
@@ -181,6 +185,7 @@ class FacebookUi extends StatelessWidget {
             ),
           ),
           ListView.builder(
+              reverse: true,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemCount: postRequistsList.length,

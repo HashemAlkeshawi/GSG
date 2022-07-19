@@ -1,6 +1,10 @@
+import 'dart:io';
+
 class postRequist {
   Post? p;
   User? u;
+
+  postRequist(this.p, this.u);
 
   postRequist.fromJason(Map m) {
     p = Post.fromJason(m['post']);
@@ -12,6 +16,9 @@ class Post {
   String? content;
   String? image;
   num? noLikes;
+  File? imageFile;
+
+  Post(this.content, this.imageFile, this.noLikes);
 
   Post.fromJason(Map m) {
     content = m['content'];
@@ -23,6 +30,9 @@ class Post {
 class User {
   String? name;
   String? image;
+
+  User(this.name, this.image);
+
   User.fromJason(Map m) {
     name = m['name'];
     image = m['image'];
@@ -52,6 +62,8 @@ class story {
 class user {
   String? name;
   String? image;
+  user(this.name, this.image);
+
   user.fromJason(Map m) {
     name = m['name'];
     image = m['image'];
